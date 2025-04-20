@@ -1,0 +1,257 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: all;
+}
+@import '../styles/global.css';
+
+.action-btn {
+    @apply m-1 w-full lg:w-40 text-base;
+}
+
+.ind-item {
+    @apply rounded-full shadow-md;
+}
+
+article h1 {
+    @apply text-4xl font-bold mb-4;
+}
+article h2 {
+    @apply text-3xl font-bold mt-4 mb-4;
+}
+article h3 {
+    @apply text-2xl font-bold mt-4 mb-4;
+}
+article h4 {
+    @apply text-xl font-bold mt-2 mb-2;
+}
+article h5 {
+    @apply text-lg font-bold mt-2 mb-2;
+}
+article h6 {
+    @apply text-sm font-bold mt-2 mb-2;
+}
+article p {
+    @apply text-base;
+}
+article ul {
+    @apply list-disc pl-5;
+}
+article ol {
+    @apply list-decimal pl-5;
+}
+article li {
+    @apply text-base;
+}
+article blockquote {
+    @apply border-l-4 pl-4 italic text-gray-600;
+}
+article pre {
+    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto;
+}
+article code {
+    @apply bg-gray-100 p-1 rounded-md text-sm;
+}
+article img {
+    @apply max-w-full h-auto;
+}
+article table {
+    @apply w-full border-collapse;
+}
+article th {
+    @apply bg-gray-200 p-2 text-left;
+}
+article td {
+    @apply p-2 border-b;
+}
+article a {
+    @apply text-blue-500 underline;
+}
+article strong {
+    @apply font-bold;
+}
+article em {
+    @apply italic;
+}
+article small {
+    @apply text-sm;
+}
+article hr {
+    @apply border-t-2 my-4;
+}
+article .highlight {
+    @apply bg-gray-100 p-2 rounded-lg;
+}
+article .highlight pre {
+    @apply bg-transparent border-none;
+}
+article .highlight code {
+    @apply bg-transparent border-none;
+}
+article .highlight .hljs {
+    @apply bg-gray-100 p-2 rounded-lg;
+}
+article .highlight .hljs-comment {
+    @apply text-gray-500;
+}
+article .highlight .hljs-keyword {
+    @apply text-blue-500;
+}
+article .highlight .hljs-string {
+    @apply text-green-500;
+}
+article .highlight .hljs-number {
+    @apply text-red-500;
+}
+article .highlight .hljs-function {
+    @apply text-purple-500;
+}
+article .highlight .hljs-variable {
+    @apply text-orange-500;
+}
+article .highlight .hljs-attribute {
+    @apply text-pink-500;
+}
+article .highlight .hljs-tag {
+    @apply text-teal-500;
+}
+article .highlight .hljs-title {
+    @apply text-yellow-500;
+}
+article .highlight .hljs-section {
+    @apply text-indigo-500;
+}
+article .highlight .hljs-params {
+    @apply text-gray-700;
+}
+article .highlight .hljs-built_in {
+    @apply text-gray-800;
+}
+article .highlight .hljs-literal {
+    @apply text-gray-900;
+}
+article .highlight .hljs-meta {
+    @apply text-gray-600;
+}
+article .highlight .hljs-symbol {
+    @apply text-gray-700;
+}
+article .highlight .hljs-type {
+    @apply text-gray-800;
+}
+article .highlight .hljs-class {
+    @apply text-gray-900;
+}
+article .highlight .hljs-attribute {
+    @apply text-gray-600;
+}
+article .highlight .hljs-selector-tag {
+    @apply text-gray-700;
+}
+article .highlight .hljs-selector-id {
+    @apply text-gray-800;
+}
+article .highlight .hljs-selector-class {
+    @apply text-gray-900;
+}
+article .highlight .hljs-selector-attr {
+    @apply text-gray-600;
+}
+article .highlight .hljs-selector-pseudo {
+    @apply text-gray-700;
+}
+article .highlight .hljs-selector-universal {
+    @apply text-gray-800;
+}
+article .highlight .hljs-meta-keyword {
+    @apply text-gray-900;
+}
+article .highlight .hljs-meta-string {
+    @apply text-gray-600;
+}
+article .highlight .hljs-deletion {
+    @apply text-red-500;
+}
+article .highlight .hljs-addition {
+    @apply text-green-500;
+}
+article .highlight .hljs-comment {
+    @apply text-gray-500;
+}
+article .highlight .hljs-quote {
+    @apply text-gray-400;
+}
+article .highlight .hljs-doctag {
+    @apply text-gray-300;
+}
+article .highlight .hljs-keyword {
+    @apply text-blue-500;
+}
+article .highlight .hljs-attribute {
+    @apply text-purple-500;
+}
+article .highlight .hljs-name {
+    @apply text-orange-500;
+}
+article .highlight .hljs-params {
+    @apply text-yellow-500;
+}
+article .highlight .hljs-string {
+    @apply text-green-500;
+}
+article .highlight .hljs-number {
+    @apply text-red-500;
+}
+article .highlight .hljs-regexp {
+    @apply text-blue-500;
+}
+article .highlight .hljs-link {
+    @apply text-blue-500;
+}
+article .highlight .hljs-selector-tag {
+    @apply text-purple-500;
+}
+article .highlight .hljs-selector-id {
+    @apply text-orange-500;
+}
+article .highlight .hljs-selector-class {
+    @apply text-yellow-500;
+}
+article .highlight .hljs-selector-attr {
+    @apply text-green-500;
+}
+article .highlight .hljs-selector-pseudo {
+    @apply text-red-500;
+}
+article .highlight .hljs-selector-universal {
+    @apply text-blue-500;
+}
+article .highlight .hljs-template-variable {
+    @apply text-purple-500;
+}
+article .highlight .hljs-template-tag {
+    @apply text-orange-500;
+}
+article .highlight .hljs-template-string {
+    @apply text-yellow-500;
+}
+article .highlight .hljs-template-embedded {
+    @apply text-green-500;
+}
+article .highlight .hljs-template-attribute {
+    @apply text-red-500;
+}
+article .highlight .hljs-template-params {
+    @apply text-blue-500;
+}
+article .highlight .hljs-template-name {
+    @apply text-purple-500;
+}
+article .highlight .hljs-template-string {
+    @apply text-orange-500;
+}
+article .highlight .hljs-template-tag {
+    @apply text-yellow-500;
+}
+article .highlight .hljs-template-embedded {
+    @apply text-green-500;
+}

@@ -1,0 +1,73 @@
+---
+import "../assets/app.css";
+import Footer from "../components/Footer.astro";
+const HEADER_BASE_COLOR = "bg-primary text-primary-content";
+const SIDEBAR_BASE_COLOR = "bg-primary text-primary-content";
+const SIDEBAR_BASE_BG_COLOR = "bg-primary/50 text-primary-content";
+const CONTENT_BASE_COLOR = "bg-base-200 text-base-content";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
+      }
+    </script>
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+    </script>
+    <meta charset="UTF-8" data-theme="light" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>NGNB Web Design</title>
+  </head>
+  <body>
+    <!-- Body -->
+    <div class="bg-base-200 relative flex flex-col justify-center items-center h-screen overflow-hidden shadow-md">
+      <div class="bg-base-100 text-base-content w-full lg:w-3/8 m-auto rounded-md shadow-lg">
+        <ul class="py-6 p-6 bg-secondary/20 steps text-xs m-auto w-full">
+          <li class="step step-secondary">メールアドレス<br/>登録</li>
+          <li class="step">メールアドレス<br/>登録完了</li>
+          <li class="step">サインアップ</li>
+          <li class="step">サインアップ<br/>受付完了</li>
+        </ul>
+        <div class="p-4">
+          <h1 class="py-2 text-3xl font-semibold text-center">NGNB Web Design</h1>
+          <h2 class="py-1 text-xl font-semibold text-center">メールアドレス登録</h2>
+          <p class="py-6 text-center">ご利用になるメールアドレスを入力してください<br>入力したメールアドレスに登録用URLを送付致します</p>
+          <form class="space-y-4">
+            <div>
+              <fieldset class="fieldset">
+                <legend class="fieldset-legend text-base">メールアドレス<div class="badge badge-xs badge-accent">必須</div></legend>
+                <p class="label">メールアドレスを入力してください</p>
+                <input type="text" class="input w-full" placeholder="メールアドレス" />
+              </fieldset>
+            </div>
+            <div>
+              <a role="button" href="/ngnb-design/" class="btn btn-primary w-full text-base">登録</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Footer -->
+      <Footer />
+      <!-- Footer -->
+    </div>
+    <!-- Body -->
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

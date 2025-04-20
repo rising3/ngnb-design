@@ -1,0 +1,32 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  message: string;
+  label: string;
+}
+const { id, title, message, label } = Astro.props;
+---
+
+<dialog id={id} class="modal modal-bottom sm:modal-middle shadow-lg bg-transparent">
+  <div class="modal-box bg-secondary border-base-300 text-secondary-content">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost shadow-md absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="text-lg font-bold">{title}</h3>
+    <p class="py-4" set:html={message}></p>
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend text-base text-secondary-content">{label}<div class="badge badge-xs badge-accent">必須</div></legend>
+      <input type="text" class="input w-full text-base-content" placeholder="Type here" />
+    </fieldset>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <div class="flex flex-col lg:flex-row justify-end">
+          <button class="action-btn btn btn-error">OK</button>
+          <button class="action-btn btn btn-ghost">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>

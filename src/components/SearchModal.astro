@@ -1,0 +1,52 @@
+---
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+
+<dialog id={id} class="modal modal-bottom sm:modal-middle shadow-lg bg-transparent">
+  <div class="modal-box bg-secondary border-base-300 text-secondary-content">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost shadow-md absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="text-lg font-bold">検索条件</h3>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-4/5">
+      <div class="lg:col-span-1">
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-base text-secondary-content">作成日(開始)</legend>
+          <input type="text" class="input w-full text-base-content" placeholder="Type here" />
+        </fieldset>
+      </div>
+      <div class="lg:col-span-1">
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend text-base text-secondary-content">作成日(終了)</legend>
+          <input type="text" class="input w-full text-base-content" placeholder="Type here" />
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- radio -->
+    <fieldset class="fieldset rounded-box w-full lg:w-4/5 border p-4">
+      <legend class="fieldset-legend text-base text-secondary-content">ソートオプション</legend>
+      <label class="label">
+        <input type="radio" name="radio-1" checked="checked" class="radio" />
+        昇順
+      </label>
+      <label class="label">
+        <input type="radio" name="radio-1" class="radio" />
+        降順
+      </label>
+    </fieldset>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <div class="flex flex-col flex-col-reverse lg:flex-row justify-end">
+          <button class="action-btn btn btn-ghost">Cancel</button>
+          <button class="action-btn btn btn-primary">検索</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>

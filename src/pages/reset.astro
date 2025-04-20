@@ -1,0 +1,66 @@
+---
+import "../assets/app.css";
+import Footer from "../components/Footer.astro";
+const HEADER_BASE_COLOR = "bg-primary text-primary-content";
+const SIDEBAR_BASE_COLOR = "bg-primary text-primary-content";
+const SIDEBAR_BASE_BG_COLOR = "bg-primary/50 text-primary-content";
+const CONTENT_BASE_COLOR = "bg-base-200 text-base-content";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
+      }
+    </script>
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+    </script>
+    <meta charset="UTF-8" data-theme="light" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>NGNB Web Design</title>
+  </head>
+  <body>
+    <!-- Body -->
+    <div class=" bg-base-200 relative flex flex-col justify-center h-screen overflow-hidden shadow-md">
+      <div class="bg-base-100 text-base-content w-full p-6 m-auto rounded-md shadow-lg lg:max-w-lg">
+        <h1 class="py-6 text-3xl font-semibold text-center">パスワードリセット</h1>
+        <form class="space-y-4">
+          <div>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend text-base">メールアドレス<div class="badge badge-xs badge-accent">必須</div></legend>
+              <p class="label">メールアドレスを入力してください</p>
+              <input type="text" class="input w-full" placeholder="メールアドレス" />
+            </fieldset>
+          </div>
+          <div>
+            <a role="button" href="/ngnb-design/signin" class="btn btn-primary w-full text-base">メールを送信する</a>
+          </div>
+          <div class="m-auto text-center">
+            <a href="/ngnb-design/signin" class="link text-sm">ログイン画面に戻る</a>
+          </div>
+        </form>
+      </div>
+    <!-- Footer -->
+    <Footer />
+    <!-- Footer -->
+    </div>
+    <!-- Body -->
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

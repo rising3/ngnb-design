@@ -1,0 +1,50 @@
+---
+
+import BasicModal from "../components/BasicModal.astro";
+import NormalModal from "../components/NormalModal.astro";
+import CautionModal from "../components/CautionModal.astro";
+import Stat from "../components/Stat.astro";
+import Graph2 from "../components/Graph2.astro";
+import Graph4 from "../components/Graph4.astro";
+import Footer from "../components/Footer.astro";
+
+---
+
+<div class="drawer-content flex flex-col w-full">
+  <!-- Content -->
+  <div class="card card-side rounded-none bg-base-100 shadow-lg border border-error border-4 m-4">
+     <div class="card-body">
+      <h2 class="card-title">[重要] トライアルの終了に伴う、お支払いの手続きのお願い</h2>
+      <p class="text-xs">
+        2025年1月2日 3時00分時点<br/>
+      </p>
+      <p class="text-sm">
+        本サービスのトライアルは終了しています。本サービスを継続してご利用する場合は、お支払いの手続きをお願い致します。
+      </p>
+      <div class="card-actions justify-end">
+        <button class="action-btn btn btn-primary" onclick="pay.showModal()">手続き開始</button>
+      </div>
+    </div>
+  </div>
+  <CautionModal id="pay" title="外部サービスに移動します" message="これ以降の手続きは、外部の決済プラットフォームで行います。<br/>決済プラットフォームで手続きを開始してもよろしいですか？"/>
+
+  <div class="shadow-md">
+    <div class="p-4">
+      <h1 class="text-2xl font-bold">Overviews</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <Stat />
+        <Stat />
+        <Stat />
+        <Stat />
+        <Graph2 />
+        <Graph2 />
+        <Graph4 />
+        <Graph4 />
+      </div>
+    </div>
+  </div>
+  <!-- Content -->
+  <!-- Footer -->
+  <Footer />
+  <!-- Footer -->
+</div>
