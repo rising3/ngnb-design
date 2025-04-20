@@ -1,0 +1,860 @@
+---
+layout: ../layouts/Layoutmd.astro
+title: "Neither Good Nor Bad Web Design"
+---
+import List1 from "../components/UserList.astro";
+import Setting from "../components/Setting.astro";
+import BasicModal from "../components/BasicModal.astro";
+import NormalModal from "../components/NormalModal.astro";
+import CautionModal from "../components/CautionModal.astro";
+import CautionModal2 from "../components/CautionModal2.astro";
+import SearchModal from "../components/SearchModal.astro";
+
+# スタイルガイド
+
+## 基本デザイン
+
+### カラー
+
+- 次のようなセマンティックカラーユーティリティクラスを使用することを推奨する<br/>https://daisyui.com/docs/colors/
+- 背景色と文字色は、それぞれのセマンティックカラーの組み合わせを利用する
+- セマンティックカラーは、テーマを利用して決定する<br/>https://daisyui.com/docs/themes/
+
+<div class="m-4 p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2">
+    <div class="bg-primary text-primary-content rounded-lg col-start-1 items-center justify-center text-center">
+        <span class="text-sm">Primary</span>
+    </div>
+    <div class="bg-secondary text-secondary-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">Secondary</span>
+    </div>
+    <div class="bg-accent text-accent-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">Accent</span>
+    </div>
+    <div class="bg-neutral text-neutral-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">Neutral</span>
+    </div>
+    <div class="bg-base-100 text-base-content border-1 border-black col-start-1 rounded-lg items-center justify-center text-center">
+        <span class="text-sm">base-100</span>
+    </div>
+    <div class="bg-base-200 text-base-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">base-200</span>
+    </div>
+    <div class="bg-base-300 text-base-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">base-300</span>
+    </div>
+    <div class="bg-info text-info-content border-1 border-black rounded-lg col-start-1 items-center justify-center text-center">
+        <span class="text-sm">Info</span>
+    </div>
+    <div class="bg-success text-success-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">Success</span>
+    </div>
+    <div class="bg-warning text-warning-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">Warning</span>
+    </div>
+    <div class="bg-error text-error-content border-1 border-black rounded-lg items-center justify-center text-center">
+        <span class="text-sm">Error</span>
+    </div>
+</div>
+
+---
+
+### タイポグラフィとレイアウト
+
+- https://design.digital.go.jp/foundations/layout/
+- https://daisyui.com/docs/layout-and-typography/
+
+#### タイポグラフィ
+
+準備中
+
+- https://design.digital.go.jp/foundations/typography/
+
+#### レイアウト
+
+- グリッドシステム(`grid` や `flex` )を使用する
+- レスポンシブデザインを考慮する場合は、ブレークポイントを `lg` とする
+  - モバイル・タブレット(768px未満)
+  - デスクトップ(768px以上)
+
+##### ２カラムレイアウト
+
+- ヘッダー
+  - 準備中
+- サイドバー
+  - 準備中
+- コンテンツ
+  - 準備中
+- フッター
+  - 準備中
+
+###### 配色１
+
+<div class="m-4 p-2 bg-base-300">
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-primary text-primary-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Header (Primary)</span>
+        </div>
+    </div>
+    <div class="h-32 grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-primary text-primary-content col-span-1 items-center justify-center text-center">
+            <span class="text-sm">SideBar (Primary)</span>
+        </div>
+        <div class="bg-base-200 text-base-content col-span-3 items-center justify-center text-center">
+            <span class="text-sm">Content (base-200)</span>
+        </div>
+    </div>
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Footer (base-100)</span>
+        </div>
+    </div>
+</div>
+
+###### 配色２
+
+<div class="m-4 p-2 bg-base-300">
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-primary text-primary-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Header (Primary)</span>
+        </div>
+    </div>
+    <div class="h-32 grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-neutral text-neutral-content col-span-1 items-center justify-center text-center">
+            <span class="text-sm">SideBar (Neutral)</span>
+        </div>
+        <div class="bg-base-200 text-base-content col-span-3 items-center justify-center text-center">
+            <span class="text-sm">Content (base-200)</span>
+        </div>
+    </div>
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Footer (base-100)</span>
+        </div>
+    </div>
+</div>
+
+###### 配色３
+
+<div class="m-4 p-2 bg-base-300">
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-primary text-primary-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Header (Primary)</span>
+        </div>
+    </div>
+
+    <div class="h-32 grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-1 items-center justify-center text-center">
+            <span class="text-sm">SideBar (base-100)</span>
+        </div>
+        <div class="bg-base-200 text-base-content col-span-3 items-center justify-center text-center">
+            <span class="text-sm">Content (base-200)</span>
+        </div>
+    </div>
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Footer (base-100)</span>
+        </div>
+    </div>
+</div>
+
+###### 配色４
+
+<div class="m-4 p-2 bg-base-300">
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Header (base-100)</span>
+        </div>
+    </div>
+    <div class="h-32 grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-1 items-center justify-center text-center">
+            <span class="text-sm">SideBar (base-100)</span>
+        </div>
+        <div class="bg-base-200 text-base-content col-span-3 items-center justify-center text-center">
+            <span class="text-sm">Content (base-200)</span>
+        </div>
+    </div>
+    <div class="grid grid-cols-4 lg:grid-cols-8">
+        <div class="bg-base-100 text-base-content col-span-4 items-center justify-center text-center">
+            <span class="text-sm">Footer (base-100)</span>
+        </div>
+    </div>
+</div>
+
+#### テーブル 
+
+- レスポンシブデザインを考慮する場合は、表示方法の柔軟性やモバイル・タブレットからの利用を考慮し、テーブルの利用は避ける
+
+<div class="m-4 p-2 bg-base-200 overflow-x-auto">
+  <List1/>
+</div>
+
+以下、テーブルのサンプルを示し、補足する。
+- **[必須]** テーブルを配置する背景色は、 `base-100` を前提とする
+- **[任意]** テーブルの行数は、1画面に収まる表示データ数を目安に適切な行数（例えば10行）を選択すること
+- テーブルの配色
+  - **[必須]** テーブルの背景色は、`base-100` （指定せず、デフォルト）を使用する
+  - **[必須]** テーブルのヘッダーは、`base-200` を使用すること
+  - **[必須]** テーブルの行は、`base-100` （指定せず、デフォルト）を使用する
+  - **[必須]** テーブルの行の `hover` は、`base-300` を使用する
+- アクションボタン
+  - **[任意] [右配置]** データの作成などのアクションボタンを配置することができる
+  - **[必須]** ボタンの色は、`Primary` を使用すること
+  - **[必須]** ２つの以上のアクションがある場合は、ボタン色はデフォルト(指定なし)を使用し、`Primary` アクションボタンの左に配置すること
+  - **[任意]** ボタンの数が多くなる場合は、そのアクションの必要性の再検討やドロップダウンを使用を検討すること
+- ヘッダー
+  - ヘッダー内に次のようなコンポーネントを配置できる
+    - **[任意] [左配置]** チェックボックス（全選択）とアクションボタン<br/>行毎にサブアクションボタンを配置する場合、複数選択可能なサブアクションの場合は、チェックボックス（全選択）とアクションボタンを配置する
+    - **[必須] [右配置]** フィルター<br/>フィルターは、表示済みのデータをフィルタリングするためのものである
+    - **[必須] [右配置]** 検索ボタン<br/>検索は、取り扱うデータに合わせて検索条件を指定してデータを取得するものである<br/> **[任意]** 検索ボタンの右側のアイコンは表示データのソート順を示すものである
+- 行
+  - 行内に次のようなコンポーネントを配置できる
+    - **[任意] [左配置]** チェックボックス<br/>行毎にサブアクションボタンを配置する場合、複数選択可能なサブアクションの場合は、チェックボックスを配置する
+    - **[必須]** キーデータ<br/>ユニークなデータを示すキーデータの色は `Primary` とし、別画面に遷移させる場合は、リンク表示とする
+    - **[任意]** キーデータ以外<br/>データの色は、 `base-content` する。またバッジやアイコンを使用しても良い。レスポンシブデザインを考慮する場合は、表示データを制御する
+    - **[任意] [右配置]** サブアクションボタン<br/>アイコンのみのグループボタンを使用すること。ボタンの配色はボタンを参照されたい
+- **[任意]** ページネーション<br/>ページネーションは、表示データが多くなる場合、配置する
+
+#### 入力フォーム ※参照も含む
+
+<div class="m-4 p-2 bg-base-200 overflow-x-auto">
+  <Setting/>
+</div>
+
+---
+
+### リンクテキスト
+
+準備中
+
+---
+
+### 余白
+
+準備中
+
+---
+
+### 角の形状
+
+- **[必須]** 原則、テーマで決定する
+- **[任意]** 角の形状は、テーマをカスタマイズして変更することができる<br/>https://daisyui.com/docs/themes/#how-to-customize-an-existing-theme
+- **[必須]** `indicator` の角の形状は、テーマに関係なく、`rounded-full` を使用することを推奨する<br/>https://tailwindcss.com/docs/border-radius
+
+<div class="m-4 p-2">
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-info"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class=" indicator-item ind-item badge badge-xs badge-secondary">8</span>
+    </div>
+</div>
+
+---
+
+### エレベーション
+
+準備中
+
+---
+
+## コンポーネント
+
+### ボタン
+
+- [参考] https://daisyui.com/components/button/
+- [参考] https://design.digital.go.jp/components/button/
+
+#### ボタンの種類
+
+#### アクションボタン
+
+- ラベル例：
+  - 作成
+  - 変更
+  - 削除
+  - インポート
+  - エクスポート
+  - OK
+  - Cancel
+
+<div class="m-4 p-2">
+    <div class="flex flex-col flex-col-reverse lg:flex-row justify-start"> 
+        <button class="action-btn btn btn-primary">作成</button>
+    </div>
+
+    <div class="flex flex-col flex-col-reverse lg:flex-row justify-start"> 
+        <button class="action-btn btn btn-ghost">Cancel</button>
+        <button class="action-btn btn btn-primary">作成</button>
+    </div>
+
+    <div class="flex flex-col flex-col-reverse lg:flex-row justify-start"> 
+        <button class="action-btn btn btn-ghost">Cancel</button>
+        <button class="action-btn btn btn-error">削除</button>
+        <button class="action-btn btn btn-primary">変更</button>
+    </div>
+</div>
+
+#### サブアクションボタン
+
+<div class="m-4 p-2">
+    <div class="join flex">
+    <button class="btn btn-soft btn-success join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+        </svg>
+    </button>
+    <button class="btn btn-soft btn-error join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+        </svg>
+    </button>
+    </div>
+</div>
+
+<div class="m-4 p-2">
+    <div class="join flex">
+    <button class="btn btn-soft join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
+        </svg>
+    </button>
+    <button class="btn btn-soft btn-error join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+        </svg>
+    </button>
+    </div>
+</div>
+
+<div class="m-4 p-2">
+    <div class="join flex">
+    <button class="btn btn-soft join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0-3-3m3 3 3-3m-8.25 6a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+        </svg>
+    </button>
+    <button class="btn btn-soft btn-error join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+        </svg>
+    </button>
+    </div>
+</div>
+
+<div class="m-4 p-2">
+    <div class="join flex">
+    <button class="btn btn-soft join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+    <button class="btn btn-soft join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+    <button class="btn btn-soft join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+    </button>
+    <button class="btn btn-soft join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+        </svg>
+    </button>
+    <button class="btn btn-soft btn-error join-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+        </svg>
+    </button>
+    </div>
+</div>
+
+#### その他ボタン
+
+- ラベル例：
+  - 検索
+  - 更新
+  - 作成
+  - 再作成
+
+<div class="m-4 p-2">
+
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+        検索
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+        </svg>
+    </button>
+
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+        検索
+    </button>
+
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+        </svg>
+        更新
+    </button>
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+        </svg>
+        作成
+    </button>
+    <button class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+        </svg>
+        再作成
+    </button>
+</div>
+
+#### ボタンの配置について
+
+- アクションボタン
+  - **[必須] [右配置]** データの作成などのアクションボタンを配置することができる
+  - **[必須]** ボタンの色は、`Primary` を使用すること
+  - **[任意]** ボタンの幅は、統一することを推奨する
+  - **[必須]** ２つの以上のアクションがある場合は、ボタン色はデフォルト(指定なし)を使用し、`Primary` アクションボタンの左に配置すること
+  - **[任意]** ボタンの数が多くなる場合は、そのアクションの必要性の再検討やドロップダウンを使用を検討すること
+  - **[必須]** キャンセルボタンは、ボタン色は `ghost` を使用し、`Primary` アクションボタンから一番左に配置すること
+  - **[必須]** レスポンシブデザインを考慮し、`flex-col` `flex-col-reverse` を指定する
+
+- サブアクションボタン
+  - **[必須] [右配置]** アイコンのみのグループボタンを使用すること
+  - **[必須]** ボタンの配色はソフトカラーを使用する
+
+- モーダルのアクションボタン（注意操作）
+  - **[必須] [左配置]** ボタンの色は、`Error` を使用すること
+  - **[必須]** ２つの以上のアクションがある場合は、ボタン色はデフォルト(指定なし)を使用し、`Error` アクションボタンの右に配置すること
+  - **[必須]** キャンセルボタンは、ボタン色は `ghost` を使用し、`Primary` アクションボタンから一番右に配置すること
+
+- モーダルのアクションボタン（通常操作）
+  - **[必須] [右配置]** ボタンの色は、`Primary` を使用すること
+  - **[必須]** ２つの以上のアクションがある場合は、ボタン色はデフォルト(指定なし)を使用し、`Primary` アクションボタンの左に配置すること
+  - **[必須]** キャンセルボタンは、ボタン色は `ghost` を使用し、`Primary` アクションボタンから一番左に配置すること
+  - **[必須]** レスポンシブデザインを考慮し、`flex-col` `flex-col-reverse` を指定する
+
+- モーダルのアクションボタン（確認のみ）
+  - **[必須] [右配置]** ボタン色はデフォルト(指定なし)` を使用すること
+
+- モーダルのアクションボタン（入力フォーム）
+  - アクションボタンと同様
+
+##### 参考
+
+以下、参考情報を示す。
+
+<br/>
+
+OKボタンとキャンセルボタンの左右配置は、OSやデバイス、画面のレイアウトなどによって異なる。
+
+##### OSやデバイスによる違い
+- Apple社OSでは右側がOK、左側がキャンセル
+- Microsoft社OSでは左側がOK、右側がキャンセル
+- Android OSでは、Version 4（Ice Cream Sandwich）でOKボタンが右側に変更
+
+##### 画面のレイアウトによる違い
+- 画面下部で中央分離配置を行った場合、右側ボタンをOKと感じている被験者が片寄る結果が出ている
+- デスクトップデバイスでは、右寄せに「OK」または「完了」「次へ」などのボタンを配置し、左寄せに「キャンセル」または「中止」「戻る」などのボタンを配置することが原則
+- モバイルデバイスでは画角の都合上、複数のボタンは縦積みで配置されることが多い
+
+##### ボタンの配置の考え方
+- 誤ってタップすると困るようなアラートの場合は、OKを左、Cancelを右に配置することも可能
+- 重要度に応じたボタンの並べ方を行い、プライマリーのボタンを右端に配置する
+- 同一の意味のアクションのボタンがどの画面でも一貫した配置となっていることで、ユーザーの認知負荷を抑えることができる
+
+---
+
+### モーダル
+
+- **[必須]** モーダルの色は、`Secondary` を使用すること
+- **[任意]** 注意操作： 外部サイトに移動する、複数データ削除など 
+- **[任意]** 通常操作： データ１件削除など（作成、変更、検索などの操作は確認を省略）
+- **[任意]** 確認のみ： 結果の表示など
+- **[任意]** 入力フォーム： 検索条件の入力画面や簡単な作成画面や変更画面など
+- [参考] https://daisyui.com/components/modal/
+- [参考] https://design.digital.go.jp/components/dialog/
+
+<div class="m-4 p-2">
+    <div class="grid grid-cols-4 lg:grid-cols-8 gap-2">
+        <div>
+            <button class="btn w-full" onclick="m1.showModal()">注意1</button>
+            <CautionModal id="m1" title="外部サービスに移動します" message="これ以降の手続きは、外部の決済プラットフォームで行います。<br/>決済プラットフォームで手続きを開始してもよろしいですか？"/>
+        </div>
+
+        <div>
+            <button class="btn w-full" onclick="m2.showModal()">注意2</button>
+            <CautionModal2 id="m2" title="顧客の全てのデータを削除します" message="顧客の全てのデータを削除するには、顧客名を入力し、OKをタップしてください" label="顧客名" />
+        </div>
+
+        <div>
+            <button class="btn w-full" onclick="m3.showModal()">通常</button>
+            <NormalModal id="m3" title="データを削除します" message="選択したデータを削除してもよろしいですか？"/>
+        </div>
+
+        <div>
+            <button class="btn w-full" onclick="m4.showModal()">確認</button>
+            <BasicModal id="m4" title="予約が完了しました" message="ホテルの予約が完了しました"/>
+        </div>
+
+        <div>
+            <button class="btn w-full" onclick="m5.showModal()">入力</button>
+            <SearchModal id="m5" />
+        </div>
+    </div>
+</div>
+
+---
+
+### ドロップダウン
+
+準備中
+
+---
+
+### インプットテキスト
+
+- 準備中
+- [参考] https://daisyui.com/components/input/
+- [参考] https://design.digital.go.jp/components/input-text/
+
+<div class="m-4 p-2">
+    <fieldset class="fieldset">
+        <legend class="fieldset-legend">What is your name?</legend>
+        <p class="label">Optional</p>
+        <input type="text" class="input" placeholder="Type here" />
+    </fieldset>
+</div>
+
+---
+
+### テキストエリア
+
+- 準備中
+- [参考] https://daisyui.com/components/textarea/
+- [参考] https://design.digital.go.jp/components/textarea/
+
+<div class="m-4 p-2">
+    <fieldset class="fieldset">
+        <legend class="fieldset-legend">What is your bio?</legend>
+        <p class="label">Optional</p>
+        <textarea class="textarea" placeholder="Bio"></textarea>
+    </fieldset>
+</div>
+
+---
+
+### セレクトボックス
+
+- **[必須]** 選択肢が5つ以上の場合のみ、セレクトボックスを使用すること
+- [参考] https://daisyui.com/components/select/
+- [参考] https://design.digital.go.jp/components/select/
+
+<div class="m-4 p-2">
+<fieldset class="fieldset">
+  <legend class="fieldset-legend">年齢は？</legend>
+  <span class="label">Optional</span>
+  <select class="select">
+    <option disabled selected>年齢を選択してください</option>
+    <option>10代</option>
+    <option>20代</option>
+    <option>30代</option>
+    <option>40代</option>
+    <option>50代</option>
+    <option>60代</option>
+  </select>
+</fieldset>
+</div>
+---
+
+### ラジオボタン
+
+- **[必須]** 選択肢が4つ以下の場合のみ、ラジオボタンを使用すること
+- **[必須]** コントロールは、左側に配置すること
+- [参考] https://daisyui.com/components/radio/
+- [参考] https://design.digital.go.jp/components/radio/
+
+<div class="m-4 p-2">
+    <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-full lg:w-1/2 border p-4">
+    <legend class="fieldset-legend text-base">一番好きな食べ物を選択してください</legend>
+    <label class="label">
+        <input type="radio" name="radio-1" checked="checked" class="radio" />
+        りんご
+    </label>
+    <label class="label">
+        <input type="radio" name="radio-1" class="radio" />
+        バナナ
+    </label>
+    <label class="label">
+        <input type="radio" name="radio-1" class="radio" />
+        みかん
+    </label>
+    </fieldset>
+</div>
+
+---
+
+### チェックボックス
+
+- **[必須]** コントロールは、左側に配置すること
+- [参考] https://daisyui.com/components/checkbox/
+- [参考] https://design.digital.go.jp/components/checkbox/
+
+<div class="m-4 p-2">
+    <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-full lg:w-1/2 border p-4">
+    <legend class="fieldset-legend text-base">好きな食べ物を選択してください</legend>
+    <label class="label">
+        <input type="checkbox" checked="checked" class="checkbox" />
+        りんご
+    </label>
+    <label class="label">
+        <input type="checkbox" class="checkbox" />
+        バナナ
+    </label>
+    <label class="label">
+        <input type="checkbox" class="checkbox" />
+        みかん
+    </label>
+    </fieldset>
+</div>
+
+<div class="m-4 p-2">
+    <p class="text-base">必須項目の場合:</p>
+    <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-full lg:w-1/2 border p-4">
+    <legend class="fieldset-legend text-base">好きな食べ物を選択してください<div class="badge badge-xs badge-accent">必須</div></legend>
+    <label class="label">
+        <input type="checkbox" checked="checked" class="checkbox" />
+        りんご
+    </label>
+    <label class="label">
+        <input type="checkbox" class="checkbox" />
+        バナナ
+    </label>
+    <label class="label">
+        <input type="checkbox" class="checkbox" />
+        みかん
+    </label>
+    </fieldset>
+</div>
+
+---
+
+### トグル
+
+- **[必須]** コントロールは、左側に配置すること 
+- [参考] https://daisyui.com/components/toggle/
+
+<div class="m-4 p-2">
+    <div class="bg-base-100 border-base-300 w-full lg:w-1/2 p-4">
+    <label class="label">
+        <input type="checkbox" checked="checked" class="toggle" />
+        Remember me
+    </label>
+    </div>
+</div>
+<div class="m-4 p-2">
+    <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-full lg:w-1/2 border p-4">
+    <legend class="fieldset-legend">ログインオプション</legend>
+    <label class="label">
+        <input type="checkbox" checked="checked" class="toggle" />
+        Remember me
+    </label>
+    </fieldset>
+</div>
+
+---
+
+### ステータス
+
+- [参考] https://daisyui.com/components/status/
+
+<div class="m-4 p-2">
+    <span class="inline-grid *:[grid-area:1/1]">
+        <span class="status status-success animate-ping"></span>
+        <span class="status status-success"></span>
+    </span>
+    <span class="pl-2">Healthy</span>
+    <br/>
+    <span class="inline-grid *:[grid-area:1/1]">
+        <span class="status status-error animate-ping"></span>
+        <span class="status status-error"></span>
+    </span>
+    <span class="pl-2">Unhealthy</span>
+</div>
+
+<div class="m-4 p-2">
+    <p class="text-base">右上の場合:</p>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-success"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-info"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-warning"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-error"></span>
+    </div>
+</div>
+
+<div class="m-4 p-2">
+    <p class="text-base">右下の場合:</p>
+    <div class="w-10 h-10 m-2 indicator indicator-bottom bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-success"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator indicator-bottom bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-info"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator indicator-bottom bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-warning"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator indicator-bottom bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-error"></span>
+    </div>
+</div>
+
+<div class="m-4 p-2">
+    <p class="text-base">アニメーション:</p>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-success animate-ping"></span>
+        <span class="indicator-item ind-item status status-success"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-info animate-ping"></span>
+        <span class="indicator-item ind-item status status-info"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-warning animate-ping"></span>
+        <span class="indicator-item ind-item status status-warning"></span>
+    </div>
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class="indicator-item ind-item status status-error animate-ping"></span>
+        <span class="indicator-item ind-item status status-error"></span>
+    </div>
+</div>
+
+---
+
+### インディケーター
+
+- **[必須]** `Secondary` を使用すること
+- **[任意]** 表示位置は、右上を推奨する
+- [参考] https://daisyui.com/components/indicator/
+
+<div class="m-4 p-2">
+    <div class="w-10 h-10 m-2 indicator bg-base-300 rounded-md">
+        <span class=" indicator-item ind-item badge badge-xs badge-secondary">+10</span>
+    </div>
+</div>
+
+---
+
+### バッジ
+
+- **[必須]** 「必須」など、入力を補足するバッジは、 `Accent` を使用すること
+- **[必須]** それ以外のバッジは、デフォルト(指定なし)を使用すること
+- **[必須]** ステータスを表すのバッジの色は、 `Success` `Info` `Warning` `Error` を使用すること
+- **[任意]** 用途に応じてソフトやアウトラインなどのバッジを使用しても良い
+- [参考] https://daisyui.com/components/badge/
+
+<div class="m-4 p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2">
+    <div class="badge badge-accent items-center col-start-1 justify-center text-center">
+        <span class="text-sm">Accent</span>
+    </div>
+    <div class="badge items-center justify-center text-center">
+        <span class="text-sm">Default</span>
+    </div>
+    <div class="badge badge-success items-center col-start-1 justify-center text-center">
+        <span class="text-sm">Success</span>
+    </div>
+    <div class="badge badge-info items-center justify-center text-center">
+        <span class="text-sm">Info</span>
+    </div>
+    <div class="badge badge-warning items-center justify-center text-center">
+        <span class="text-sm">Warning</span>
+    </div>
+    <div class="badge badge-error items-center justify-center text-center">
+        <span class="text-sm">Error</span>
+    </div>
+</div>
+
+---
+
+### パンくずリスト
+
+- **[必須]** パンくずリストの色は、 `base-content` を使用すること
+- **[必須]** 前の層はリンクで移動できるようにすること
+- **[任意]** 深さは３層までを推奨する（深くなりすぎないように注意する）
+- **[任意]** アイコンを使用しても良い
+- [参考] https://daisyui.com/components/breadcrumbs/
+- [参考] https://design.digital.go.jp/components/breadcrumb/
+
+<div class="m-4 p-2">
+    <div class="breadcrumbs text-sm">
+        <ul>
+            <li>ホーム</li>
+            <li>ユーザー一覧</li>
+            <li>ユーザー作成</li>
+        </ul>
+    </div>
+</div>
+
+---
+
+### 緊急時バナー
+
+- [参考] https://design.digital.go.jp/components/emergency-banner/
+
+<div class="m-4 p-2">
+    <div class="card card-side rounded-none bg-base-100 shadow-lg border border-error border-4">
+        <div class="card-body">
+            <h4 class="card-title">[重要] トライアルの終了に伴う、お支払いの手続きのお願い</h4>
+            <p class="text-xs">
+            2025年1月2日 3時00分時点<br/>
+            </p>
+            <p class="text-sm">
+            本サービスのトライアルは終了しています。本サービスを継続してご利用する場合は、お支払いの手続きをお願い致します。
+            </p>
+            <div class="card-actions justify-end">
+                <button class="action-btn btn btn-primary" onclick="pay.showModal()">手続き開始</button>
+            </div>
+        </div>
+    </div>
+    <CautionModal id="pay" title="外部サービスに移動します" message="これ以降の手続きは、外部の決済プラットフォームで行います。<br/>決済プラットフォームで手続きを開始してもよろしいですか？"/>
+</div>
+
+<div class="m-4 p-2">
+    <div class="card card-side rounded-none bg-base-100 shadow-lg border border-error border-4">
+        <div class="card-body">
+            <h4 class="card-title">[緊急] XXの影響により現在ご利用できないサービス</h4>
+            <p class="text-xs">
+            2025年1月2日 3時00分時点<br/>
+            </p>
+            <p class="text-sm">
+            [障害発生] XXの影響によりサービスの一部がご利用できない状態が発生しております。
+            現在復旧作業を行なっており、復旧次第、当サービスにてご報告致します。<br/><br/>
+            </p>
+            <p class="text-sm">
+            <b>現在ご利用出来ないサービス</b>
+            <ul class="list-disc list-inside">
+                <li>新規登録</li>
+                <li>アカウント情報変更</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+---

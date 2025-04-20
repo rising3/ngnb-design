@@ -1,0 +1,152 @@
+---
+import SearchModal from "../components/SearchModal.astro";
+import NormalModal from "../components/NormalModal.astro";
+import Footer from "../components/Footer.astro";
+
+const items = new Array(10).fill(0).map((_, i) => i + 1);
+
+---
+
+<div class="drawer-content flex flex-col">
+  <!-- Content -->
+  <div class="shadow-md">
+    <div class="p-4">
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li><a href="/ngnb-design">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            ホーム</a></li>
+          <li>通知一覧</li>
+        </ul>
+      </div>
+      <h1 class="text-2xl font-bold">通知一覧</h1>
+
+      <div class="p-2 bg-base-100 shadow-md rounded-sm">
+        <div class="border border-base-300 w-full overflow-hidden">
+          <!-- header -->
+          <div class="bg-base-200 ">
+            <div class="card">
+              <div class="card-body">
+                <div class="flex items-center">
+                  <!-- checkbox -->
+                  <input type="checkbox" class="checkbox checkbox-xs mr-1" />
+                  <!-- select all -->
+                  <h6 class="card-title hidden sm:block text-base lg:text-lg mr-1">Select All</h6>
+                  <div class="dropdown dropdown-start pr-2">
+                    <div tabindex="0" role="button" class="btn m-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 stroke-current">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                      </svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 text-base-content item-center z-1 mt-3 w-40 p-2 shadow-lg">
+                      <li><a>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        既読にする</a></li>
+                      <li><a>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                        </svg>
+                        削除する</a></li>
+                    </ul>
+                  </div>
+                  <!--調整用 -->
+                  <div class="flex-1"></div>
+ 
+                  <!-- action -->
+                  <div class="flex gap-2">
+                    <!--Filter -->
+                    <label class="input">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 stroke-current">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
+                      </svg>
+                                                
+                      <input type="search" placeholder="フィルター" />
+                    </label>
+                    <!--Search -->
+                    <button class="btn" onclick="search.showModal()">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                      </svg>
+                      検索
+                      <!--Sort status -->
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 stroke-current hidden lg:flex">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {items.map((item) => (
+          <!--rows -->
+          <div class="border-b border-b-base-300 border-solid transition-all hover:bg-base-300 active:bg-base-100">
+            <div class="card">
+              <div class="card-body">
+                <div class="flex items-center">
+                  <!-- checkbox -->
+                  <input type="checkbox" class="checkbox checkbox-xs mr-1" />
+                  <!-- rowdata -->
+                  <div class="flex-1">
+                    <h6 class="card-title text-sm lg:text-lg text-primary">タイトル</h6>
+                    <div class="card-actions place-items-center gap-2">
+                      <p class="flex-none text-sm">アイテム１</p>
+                      <p class="flex-none text-sm">アイテム２</p>
+                      <p class="flex-none text-sm hidden lg:block">アイテム３(md以下非表示)</p>
+                      <p class="flex-none text-sm hidden lg:block">アイテム４(md以下非表示)</p>
+                      <p class="flex-none text-sm hidden lg:block">アイテム５(md以下非表示)</p>
+                    </div>
+                  </div>
+                  <!-- action -->
+                  <div class="join flex">
+                    <button class="btn btn-soft btn-success join-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                    </button>
+                    <button class="btn btn-soft btn-error join-item" onclick="del.showModal()">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="h-4 w-4 stroke-current">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          ))}
+          <SearchModal id="search"/>
+          <NormalModal id="del" title="通知を削除します" message="通知を削除してもよろしいですか？"/>
+        </div>
+
+        <!-- pagination -->
+        <div class="join flex justify-center items-center mt-2">
+          <button class="join-item btn">前へ</button>
+          <button class="join-item btn hidden lg:flex">1</button>
+          <button class="join-item btn hidden lg:flex">2</button>
+          <button class="join-item btn hidden lg:flex btn-disabled">...</button>
+          <button class="join-item btn hidden lg:flex">99</button>
+          <button class="join-item btn hidden lg:flex">100</button>
+          <button class="join-item btn">次へ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Content -->
+  <!-- Footer -->
+  <Footer />
+  <!-- Footer -->
+</div>
