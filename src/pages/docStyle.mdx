@@ -534,6 +534,7 @@ OKボタンとキャンセルボタンの左右配置は、OSやデバイス、�
         <legend class="fieldset-legend">What is your name?</legend>
         <p class="label">Optional</p>
         <input type="text" class="input" placeholder="Type here" />
+        <p class="label text-xs text-shadow-md text-error">error message...</p>
     </fieldset>
 </div>
 
@@ -550,6 +551,7 @@ OKボタンとキャンセルボタンの左右配置は、OSやデバイス、�
         <legend class="fieldset-legend">What is your bio?</legend>
         <p class="label">Optional</p>
         <textarea class="textarea" placeholder="Bio"></textarea>
+        <p class="label text-xs text-shadow-md text-error">error message...</p>
     </fieldset>
 </div>
 
@@ -645,6 +647,7 @@ OKボタンとキャンセルボタンの左右配置は、OSやデバイス、�
         <input type="checkbox" class="checkbox" />
         みかん
     </label>
+    <p class="label text-xs text-shadow-md text-error">error message...</p>
     </fieldset>
 </div>
 
@@ -763,9 +766,10 @@ OKボタンとキャンセルボタンの左右配置は、OSやデバイス、�
 
 ### バッジ
 
-- **[必須]** 「必須」など、入力を補足するバッジは、 `Accent` を使用すること
-- **[必須]** それ以外のバッジは、デフォルト(指定なし)を使用すること
-- **[必須]** ステータスを表すのバッジの色は、 `Success` `Info` `Warning` `Error` を使用すること
+- **[必須]** 「必須」など、入力を補足するバッジは、 `accent` を使用すること
+- **[必須]** <span class="badge badge-accent">新規</span> 一覧内のキー情報相当の横にバッジを利用する場合は、`secondary` を使用すること
+- **[必須]** <span class="badge badge-accent">変更</span> それ以外のバッジは、~デフォルト(指定なし)~ `badge-soft` を使用すること
+- **[必須]** ステータスを表すのバッジの色は、 `success` `info` `warning` `error` を使用すること
 - **[任意]** 用途に応じてソフトやアウトラインなどのバッジを使用しても良い
 - [参考] https://daisyui.com/components/badge/
 
@@ -773,8 +777,11 @@ OKボタンとキャンセルボタンの左右配置は、OSやデバイス、�
     <div class="badge badge-accent items-center col-start-1 justify-center text-center">
         <span class="text-sm">Accent</span>
     </div>
-    <div class="badge items-center justify-center text-center">
-        <span class="text-sm">Default</span>
+    <div class="badge badge-secondary items-center justify-center text-center">
+        <span class="text-sm">Secondary</span>
+    </div>
+    <div class="badge badge-soft items-center justify-center text-center">
+        <span class="text-sm">Soft</span>
     </div>
     <div class="badge badge-success items-center col-start-1 justify-center text-center">
         <span class="text-sm">Success</span>

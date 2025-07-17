@@ -18,6 +18,7 @@ const { id, title, message, label } = Astro.props;
     <fieldset class="fieldset">
       <legend class="fieldset-legend text-base text-secondary-content">{label}<div class="badge badge-xs badge-accent">必須</div></legend>
       <input type="text" class="input w-full text-base-content" placeholder="Type here" />
+      <p class="label text-xs text-error text-shadow-md">error message...</p>
     </fieldset>
 
     <div class="modal-action">
@@ -28,5 +29,5 @@ const { id, title, message, label } = Astro.props;
         </div>
       </form>
     </div>
-  </div>
+  </div> 
 </dialog>

@@ -255,3 +255,7 @@ article .highlight .hljs-template-tag {
 article .highlight .hljs-template-embedded {
     @apply text-green-500;
 }
+
+article code {
+    @apply border-black bg-yellow-400 text-red-800 p-2 rounded-lg;
+}
